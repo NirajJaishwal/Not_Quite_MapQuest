@@ -52,6 +52,15 @@ public:
    void delEdge(int source, int dest);
    int isEdge(int source, int dest);
    int dijkstra(int source, int dest);
+   ~Digraph () {
+      // Release memory for vertices
+      for (unsigned int i = 0; i < numberOfVertices; i++) {
+         delete vertex[i];
+      }
+
+      //release memory for distance Matrix
+      distMatrix.clear();
+   }
 };
 
 #endif
